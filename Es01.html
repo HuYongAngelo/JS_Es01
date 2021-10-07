@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Es 01</title>
+    </head>
+    <body>
+        <button onclick = "console.log('click da evento')">
+            cliccami da evento
+        </button>
+
+        <button onclick = "funzioneClick('script')">
+            cliccami da script
+        </button>
+
+        <button id="btn3">
+            cliccami da listener
+        </button>
+
+        <script>
+            // var funzioneClick = function(){                        //Mettendo () attorno a function(){} e alla fine altri () diventa una Self Declaration and Execution
+            //     // Operazioni
+            //     console.log("click da script");
+            // };
+            // funzioneClick();
+
+            var funzioneClick = function(stringa) {
+                console.log("click da "+ stringa);
+            };
+
+            var bottone3 = document.getElementById("btn3");
+            bottone3.addEventListener("click", 
+                function() {
+                    funzioneClick('listener')
+                }
+            );
+
+            // ; non sono obbligatori, ma è meglio metterli
+            //Ctrl+K+C = Aggiungi commento
+            //Ctrl+K+U = Togli commento
+        </script>
+    </body>
+</html>
