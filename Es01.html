@@ -11,6 +11,10 @@
             cliccami da script
         </button>
 
+        <div id = "div1">
+            Non premermi
+        </div>
+
         <button id="btn3">
             cliccami da listener
         </button>
@@ -26,10 +30,23 @@
                 console.log("click da "+ stringa);
             };
 
+            var controllo = true;
             var bottone3 = document.getElementById("btn3");
             bottone3.addEventListener("click", 
                 function() {
-                    funzioneClick('listener')
+                    funzioneClick('listener');
+
+                    document.getElementById("div1").setAttribute("style", "backgroun-color: pink");
+                    document.getElementById("div1").innerHTML = 
+                        "<h1>TI AVEVO DETTO DI NON CLICCARE</h1>";
+                    
+                    if (controllo) {
+                        bottone3.setAttribute("style", "background-color: red");
+                        controllo = false;
+                    } else {
+                        bottone3.removeAttribute("style");
+                        controllo = true;
+                    }
                 }
             );
 
